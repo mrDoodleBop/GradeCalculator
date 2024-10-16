@@ -77,7 +77,7 @@ SecStack<T>::~SecStack(){
 }//end of destructor
 
 template <typename T>
-void SecStack<T>::pop(T&){
+void SecStack<T>::pop(T& item){
 
     StackNode *temp = NULL;
 
@@ -99,7 +99,7 @@ void SecStack<T>::pop(T&){
 }//end of pop function
 
 template <typename T>
-void SecStack<T>::push(T){
+void SecStack<T>::push(T item){
 
     StackNode *newNode = NULL;
 

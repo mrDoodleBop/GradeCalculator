@@ -32,7 +32,7 @@ class WeightedSec{
 
         WeightedSec(string, double, double);
 
-        ~WeightedSec();
+        //~WeightedSec();
 
         //Accessor functions:
         string getName(){

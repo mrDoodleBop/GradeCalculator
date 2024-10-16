@@ -5,6 +5,3 @@
     Purpose : Hold the function definitions for the grade calculator program
 */
 
-#include "SecStack.h"
-#include "WeightedSec.h"
-

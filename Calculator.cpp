@@ -15,14 +15,20 @@ int main(){
 
     //Variables:
     char flag;
+    char saveFlag;
     int numSec;
+
+    double sumNewGrades =  0; //sum of the grades multiplied by their weights
+    double sumWeights = 0; //sum of the weights
+
+    double finalGrade;
 
     string name;
     double weight, grade;
 
     SecStack<WeightedSec> stack; //list of weighted sections
 
-    WeightedSec section; //WeightedSec object
+    WeightedSec section; //WeightedSec object; will be hold new values at every iteration of the for loop
 
     //Ask the user if they would like to begin the program:
     system("CLS");
@@ -43,30 +49,57 @@ int main(){
         for(int i = 0; i < numSec; i++){
 
             //Take in the information for the section:
-            cout << "\n\t\tEnter the name of the weighted section: ";
+            cout << "\n\t\tEnter the name of section " << i+1 << ": ";
             cin.ignore();
             getline(cin, name);
 
-            cout << "\n\t\tEnter the section's weight on your final grade \n( ex: 35.0, 65.5, etc.) : "; //enter the weight
+            cout << "\n\t\tEnter section " << i+1 << "'s weight on your final grade \n\t\t( ex: .35, .05, etc.) : "; //enter the weight
             cin >> weight;
             weight = weight/100;
 
-            cout << "\n\t\tEnter the current grade average you have \nfor this section (ex: 96.7, 78.3, etc.) : "; //enter the grade
+            cout << "\n\t\tEnter the current grade average you have \n\t\tfor section " << i+1 << " (ex: 96.7, 78.3, etc.) : "; //enter the grade
             cin >> grade;
 
-            section = WeightedSec(name, weight, grade);
+            //adding to sum of weights:
+            sumWeights += weight;
+
+            //adding to sum of grades:
+            sumNewGrades += (grade*weight);
+
+            section = WeightedSec(name, weight, grade); //create the section object
+
+            stack.push(section); //push the object to the top of the stack
 
         }//end of for loop
 
-        //After the for loop, traverse the stack again to multiply each grade by its respective section weight:
-
-        //Add together all sums:
-
-        //If the weights don't add up to 1, divide new grade sums by the sum of the weights:
+        //Calculate final grade [(sum of the grades multiplied by their weights) / (sum of the weights)]:
+        finalGrade = (sumNewGrades/sumWeights);
 
         //Return the final grade:
+        cout << "\n\n\t\t|----------Your Final Grade----------|";
+        cout << "\n\t\tFinal Grade : " << finalGrade;
+
+        //Ask the user if they would like to save their grade information to a text file:
+        cout << "\n\n\t\tWould you like to save your grade information to a text file? (y/n): ";
+        cin >> saveFlag;
+
+        //Branching based off of switchFlag value:
+        switch(saveFlag){
+            case 'y':
+                //Run the function that saves all sections and their grade information to a text file under a user specified name:
+                //--> maybe in the future you can do all of this using SQL with this program :)
+                break;
+            case 'n':
+                //Do not save the data into a text file:
+                break;
+            default:
+                cout << "\n\t\tYou did not enter a valid response.";
+        }
+
 
         //Ask the user if they would like to do it again:
+        cout << "\n\n\t\tWould you like to run the program again? (y/n): ";
+        cin >> flag;
 
     }//end of while loop
 
