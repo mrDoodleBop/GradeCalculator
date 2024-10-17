@@ -1,0 +1,16 @@
+
+|---------- MATH 1910 Grade Information----------|
+-----Section:
+Name: Exams
+Current Grade : 75.6%
+Weight on Final :  50%
+-----Section:
+Name: Quizzes
+Current Grade : 82.4%
+Weight on Final :  25%
+-----Section:
+Name: Assignments
+Current Grade : 78.9%
+Weight on Final :  25%
+
+FINAL GRADE : 78.125%

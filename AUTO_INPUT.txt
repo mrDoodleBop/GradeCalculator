@@ -1,0 +1,15 @@
+y
+MATH 1910
+3
+Assignments
+.25
+78.9
+Quizzes
+.25
+82.4
+Exams
+.50
+75.6
+y
+testingFunction.txt
+n

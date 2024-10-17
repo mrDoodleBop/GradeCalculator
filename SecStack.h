@@ -13,6 +13,9 @@
 #include <string>
 #include <stack>
 
+#include <fstream>//for saving stack information to a file
+
+
 using namespace std;
 
 
@@ -51,6 +54,9 @@ class SecStack{
 
         //isEmpty:
         bool isEmpty();
+
+        //saveToFile:
+        void saveTofile(string fileName, string courseName, double finalGrade);
 
 
 };//end of SecStack class
@@ -138,6 +144,47 @@ bool SecStack<T>::isEmpty(){
     return status;
 
 }//end if is empty function
+
+template <typename T>
+void SecStack<T>::saveTofile(string fileName, string courseName, double finalGrade){
+
+    //Variables:
+    StackNode *nodePtr, *nextNode;
+
+    nodePtr = top;
+
+    //Open a file:
+    ofstream stackFile;
+
+    stackFile.open(fileName);
+
+    stackFile << "\n|---------- " << courseName << " Grade Information----------|";
+
+
+    //Traverse through the list
+    //-->at each iteration, save node information to the file in a readable format:
+    while(nodePtr != NULL){
+
+        nextNode = nodePtr->next;
+
+        stackFile << "\n-----Section:";
+        stackFile << "\nName: " << nodePtr->value.getName();
+        stackFile << "\nCurrent Grade : " << nodePtr->value.getGrade() << "%";
+        stackFile << "\nWeight on Final :  " << (nodePtr->value.getWeight() * 10000) << "%";
+
+        nodePtr = nextNode;
+
+
+    }//end of while loop
+
+    stackFile << "\n\nFINAL GRADE : " << finalGrade << "%";
+
+    //Display a message informing the user that their file has been created and saved:
+    cout << "\n\n\t\tYour grade information has been saved under the name " << fileName << ".";
+
+    stackFile.close();
+
+}//end of save to file function
 
 
 

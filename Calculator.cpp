@@ -10,6 +10,8 @@
 #include "SecStack.h"
 #include "WeightedSec.h"
 
+//Function declarations:
+
 //main function:
 int main(){
 
@@ -17,6 +19,10 @@ int main(){
     char flag;
     char saveFlag;
     int numSec;
+
+    string courseName;
+
+    string fileName;
 
     double sumNewGrades =  0; //sum of the grades multiplied by their weights
     double sumWeights = 0; //sum of the weights
@@ -39,8 +45,12 @@ int main(){
     //Start the while loop:
     while(flag != 'n'){
 
+        cout << "\n\n\t\tEnter the course name : ";
+        cin.ignore();
+        getline(cin, courseName);
+
         //Find the number of weighted sections for the course:
-        cout << "\n\n\t\tEnter the number of weighted sections for your course (integer): ";
+        cout << "\n\t\tEnter the number of weighted sections for your course (integer): ";
         cin >> numSec;
 
         cout << "\n\n\t\t|----------Creating " << numSec << " Sections----------|";
@@ -88,9 +98,14 @@ int main(){
             case 'y':
                 //Run the function that saves all sections and their grade information to a text file under a user specified name:
                 //--> maybe in the future you can do all of this using SQL with this program :)
+                cout << "\n\n\t\tEnter the desired file name : ";
+                cin >> fileName;
+
+                stack.saveTofile(fileName, courseName, finalGrade);
                 break;
             case 'n':
                 //Do not save the data into a text file:
+                cout << "\n\n\t\tMoving on without saving data to a file.";
                 break;
             default:
                 cout << "\n\t\tYou did not enter a valid response.";
@@ -108,5 +123,4 @@ int main(){
     return 0;
 
 }//end of main function
-
 
