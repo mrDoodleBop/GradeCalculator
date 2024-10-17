@@ -1,1 +1,70 @@
+y or n -> y to begin the program, n to not
+name of the course 
+number of weighted sections in the course
+
+***you will repeat the next 3 lines for the number of weighted sections you have in the course
+name of the weighted sections
+weight of the section on the final grade (.25, .05, .75, etc.)
+current grade in the section
+***end of the process
+
+y or n -> y to save to a file, n to not
+
+//if you entered y:
+name of the file you would like to save the information to(preferably ending with ".txt")
+y or n -> y to re-run the program for another course and repeat the process, n to not
+
+//if you decide you want to run the program for multiple courses, you will enter y for the
+above input and below you will repeat that process - starting with the course name
+
+EXAMPLE for One Course:
+y
+MATH 1910
+3
+Assignments
+.25
+78.9
+Quizzes
+.25
+82.4
+Exams
+.50
+75.6
+y
+testingFunctions.txt
+n
+
+EXAMPLE for More then One Course:
+
+y
+MATH 1910
+3
+Assignments
+.25
+78.9
+Quizzes
+.25
+82.4
+Exams
+.50
+75.6
+y
+testingFunctions1.txt
+y
+GEOL 1045
+3
+Assignments
+.25
+78.9
+Quizzes
+.25
+82.4
+Exams
+.50
+75.6
+y
+testingFunctions2.txt
+
+***Note: if you save more than one file, make sure that you save each course under its own file name, otherwise every time you save one course, the previous will be deleted :)
+
 
