@@ -1,5 +1,5 @@
 y
-MATH 1910
+Calculus I
 3
 Assignments
 .25
@@ -11,5 +11,16 @@ Exams
 .50
 75.6
 y
-testingFunction.txt
+CalcGrades.txt
+y
+ComputerScience
+2
+Projects
+.65
+82.4
+Exams
+.35
+75.6
+y
+CompSciGrades.txt
 n

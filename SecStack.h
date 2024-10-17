@@ -58,6 +58,9 @@ class SecStack{
         //saveToFile:
         void saveTofile(string fileName, string courseName, double finalGrade);
 
+        //clearStack:
+        void clearStack();
+
 
 };//end of SecStack class
 
@@ -174,7 +177,6 @@ void SecStack<T>::saveTofile(string fileName, string courseName, double finalGra
 
         nodePtr = nextNode;
 
-
     }//end of while loop
 
     stackFile << "\n\nFINAL GRADE : " << finalGrade << "%";
@@ -185,6 +187,25 @@ void SecStack<T>::saveTofile(string fileName, string courseName, double finalGra
     stackFile.close();
 
 }//end of save to file function
+
+template <typename T>
+void SecStack<T>::clearStack(){
+
+    StackNode *nodePtr, *nextNode;
+
+    //position nodePtr at the top of the stack:
+    nodePtr = top;
+
+    //traverse the list deleting each node:
+    while (nodePtr != NULL){
+
+        nextNode = nodePtr->next;
+        delete nodePtr;
+        nodePtr = nextNode;
+
+    }//end of while loop
+
+}//end of destructor
 
 
 

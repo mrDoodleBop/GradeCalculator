@@ -102,6 +102,7 @@ int main(){
                 cin >> fileName;
 
                 stack.saveTofile(fileName, courseName, finalGrade);
+
                 break;
             case 'n':
                 //Do not save the data into a text file:
