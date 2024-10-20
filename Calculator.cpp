@@ -44,10 +44,11 @@ int main(){
 
     //Start the while loop:
     while(flag != 'n'){
-
+        /*
         cout << "\n\n\t\tEnter the course name : ";
         cin.ignore();
         getline(cin, courseName);
+        */
 
         //Find the number of weighted sections for the course:
         cout << "\n\t\tEnter the number of weighted sections for your course (integer): ";
